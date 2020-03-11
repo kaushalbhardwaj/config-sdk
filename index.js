@@ -34,6 +34,9 @@
       this._token = token;
       this._environment = environment;
       console.log("env and token set");
+
+      localStorage.setItem("fff", "ffff");
+      console.log("ffffff"+ localStorage.getItem("fff"));
     }
   }
 

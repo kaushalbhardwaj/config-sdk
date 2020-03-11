@@ -188,11 +188,9 @@ class TurboConfigHelper {
     xhr.setRequestHeader("Content-Type", "application/json");
 
     return xhr;
-
   }
 
 }
-
 
 class StorageHelper {
 

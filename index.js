@@ -1,7 +1,7 @@
 
 var turboconfig = {};
 
-var Identity = function(name, email, phone) {
+var turboconfig.Identity = function(name, email, phone) {
   this.name = name;
   this.email = email;
   this.phone = phone;
@@ -212,7 +212,7 @@ class StorageHelper {
  static setSessionId(token, environment, value) {
   window.localStorage.setItem("turboconfig_" + token + "_" + environment + "_sessionId", value);
 }
-}
 
+}
 
 module.exports = turboconfig;

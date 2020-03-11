@@ -38,5 +38,4 @@
   }
 
 
-  export Identity;
   module.exports = turboconfig;

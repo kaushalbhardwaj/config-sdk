@@ -33,6 +33,8 @@ class TurboConfigHelper {
 
     this._token = token;
     this._environment = environment;
+    this._userId = null;
+    
     if(StorageHelper.getSessionId(this._token, this._environment) == null) {
       StorageHelper.setSessionId(token, environment, this.generateRandomSessionId());
       console.log("session" + StorageHelper.getSessionId(this._token, this._environment));

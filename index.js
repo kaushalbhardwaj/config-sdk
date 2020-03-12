@@ -128,7 +128,7 @@ class TurboConfigHelper {
     var data = JSON.stringify({"user": {
       "name": identity.name,
       "email": identity.email,
-      "phone": identity.phone
+      "phoneNumber": identity.phone
     }});
 
     let xhr = this.getSendPropertyRequestObject();

@@ -162,7 +162,7 @@ class TurboConfigHelper {
   }
 
   generateRandomSessionId() {
-    let randomId = Date.now() + this._token;
+    let randomId = this._token + Date.now();
     return randomId;
   }
 

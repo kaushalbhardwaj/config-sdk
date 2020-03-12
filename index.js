@@ -34,7 +34,7 @@ class TurboConfigHelper {
     this._token = token;
     this._environment = environment;
     this._userId = null;
-    
+
     if(StorageHelper.getSessionId(this._token, this._environment) == null) {
       StorageHelper.setSessionId(token, environment, this.generateRandomSessionId());
       console.log("session" + StorageHelper.getSessionId(this._token, this._environment));
@@ -71,6 +71,11 @@ class TurboConfigHelper {
     xhr.open("GET", turboConfigUrl + "users/flags");
     xhr.setRequestHeader("X-Environment", this._environment);
     xhr.setRequestHeader("X-Temp-Token", sessionId);
+
+    if(this._userId != null) {
+      xhr.setRequestHeader("X-Identification", this._userId);
+    }
+
     xhr.setRequestHeader("Authorization", "Bearer " + this._token);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send();
@@ -184,7 +189,11 @@ class TurboConfigHelper {
 
     xhr.open("PATCH", turboConfigUrl + "users");
     xhr.setRequestHeader("X-Environment", this._environment);
-    xhr.setRequestHeader("X-Identification", this._userId);
+    
+    if(this._userId != null) {
+      xhr.setRequestHeader("X-Identification", this._userId);
+    }
+
     xhr.setRequestHeader("X-Temp-Token", sessionId);
     xhr.setRequestHeader("Authorization", "Bearer " + this._token);
     xhr.setRequestHeader("Content-Type", "application/json");

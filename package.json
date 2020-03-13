@@ -1,6 +1,6 @@
 {
   "name": "turboconfigtest",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "sdk for client",
   "main": "index.js",
   "scripts": {

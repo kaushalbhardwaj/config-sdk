@@ -238,7 +238,7 @@ class TurboConfigHelper {
   class StorageHelper {
 
     static setFlags(token, environment, sessionId, value) {
-      root.localStorage.setItem("turboconfig_" + token + "_" + environment + "_" + sessionId + "_" + "flags", value);
+      window.localStorage.setItem("turboconfig_" + token + "_" + environment + "_" + sessionId + "_" + "flags", value);
       let latestFlags = JSON.parse(value);
 
       for (let key in flagValueMapForCallback) {
@@ -270,11 +270,11 @@ class TurboConfigHelper {
     }
 
     static setUserId(token, environment, value) {
-      root.localStorage.setItem("turboconfig_" + token + "_" + environment + "_" + "userid", value);
+      window.localStorage.setItem("turboconfig_" + token + "_" + environment + "_" + "userid", value);
     }
 
     static getUserId(token, environment) {
-      let userId = root.localStorage.getItem("turboconfig_" + token + "_" + environment + "_" + "userid");
+      let userId = window.localStorage.getItem("turboconfig_" + token + "_" + environment + "_" + "userid");
       return userId;
     }
 
